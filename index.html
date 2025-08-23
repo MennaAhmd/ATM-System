@@ -3,9 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATM - System</title>
+    <title>ATM System</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="atm-container">
+        <div class="atm-header">
+            <div class="bank-name" id="bank-name">Global Bank ATM</div>
+            <div id="welcome-message">Welcome to ATM Service</div>
+        </div>
+        
+        <div class="atm-screen">
+            <!-- Language Selection Screen -->
+            <div id="language-screen" class="screen-content active">
+                <div class="message">Please choose your language</div>
+                <div class="language-selector">
+                    <button class="lang-btn active" id="lang-en">English</button>
+                    <button class="lang-btn" id="lang-ar">العربية</button>
+                </div>
+                <button class="btn btn-primary" id="proceed-btn">Proceed →</button>
+            </div>
+            
+            <!-- PIN Entry Screen -->
+            <div id="pin-screen" class="screen-content">
+                <div class="message" id="pin-message">Please enter your PIN</div>
+                <div class="input-group">
+                    <label for="pin-input" id="pin-label">PIN Number</label>
+                    <input type="password" id="pin-input" placeholder="Enter 4-digit PIN">
+                </div>
+                <div class="attempts-warning" id="attempts-warning"></div>
+                <button class="btn btn-primary" id="login-btn">Login</button>
+            </div>
+            
+            <!-- Main Menu Screen -->
+            <div id="menu-screen" class="screen-content">
+                <div class="message" id="greeting-message">Hello, Menna Ahmed</div>
+                <div class="option-buttons">
+                    <button class="btn" id="balance-btn">Check Balance</button>
+                    <button class="btn" id="deposit-btn">Deposit</button>
+                    <button class="btn" id="withdraw-btn">Withdraw</button>
+                    <button class="btn" id="transfer-btn">Transfer</button>
+                    <button class="btn" id="change-pin-btn">Change PIN</button>
+                    <button class="btn btn-danger" id="exit-btn">Exit</button>
+                </div>
+            </div>
+            
+            <!-- Balance Screen -->
+            <div id="balance-screen" class="screen-content">
+                <div class="message">Your Account Balance</div>
+                <div class="balance-display" id="balance-amount">$5,000.00</div>
+                <button class="btn btn-primary" id="back-from-balance">Back to Menu</button>
+            </div>
+            
+            <!-- Deposit Screen -->
+            <div id="deposit-screen" class="screen-content">
+                <div class="message">Deposit Funds</div>
+                <div class="input-group">
+                    <label for="deposit-amount">Amount to Deposit</label>
+                    <input type="number" id="deposit-amount" placeholder="Enter amount">
+                </div>
+                <button class="btn btn-success" id="confirm-deposit">Confirm Deposit</button>
+                <button class="btn" id="back-from-deposit">Cancel</button>
+            </div>
+            
+            <!-- Withdraw Screen -->
+            <div id="withdraw-screen" class="screen-content">
+                <div class="message">Withdraw Cash</div>
+                <div class="input-group">
+                    <label for="withdraw-amount">Amount to Withdraw</label>
+                    <input type="number" id="withdraw-amount" placeholder="Enter amount">
+                </div>
+                <button class="btn btn-success" id="confirm-withdraw">Confirm Withdrawal</button>
+                <button class="btn" id="back-from-withdraw">Cancel</button>
+            </div>
+            
+            <!-- Transfer Screen -->
+            <div id="transfer-screen" class="screen-content">
+                <div class="message">Transfer Funds</div>
+                <div class="input-group">
+                    <label for="transfer-amount">Amount to Transfer</label>
+                    <input type="number" id="transfer-amount" placeholder="Enter amount">
+                </div>
+                <div class="input-group">
+                    <label for="account-number">Recipient Account Number</label>
+                    <input type="text" id="account-number" placeholder="Enter account number">
+                </div>
+                <button class="btn btn-success" id="confirm-transfer">Confirm Transfer</button>
+                <button class="btn" id="back-from-transfer">Cancel</button>
+            </div>
+            
+            <!-- Change PIN Screen -->
+            <div id="change-pin-screen" class="screen-content">
+                <div class="message">Change Your PIN</div>
+                <div class="input-group">
+                    <label for="old-pin">Current PIN</label>
+                    <input type="password" id="old-pin" placeholder="Enter current PIN">
+                </div>
+                <div class="input-group">
+                    <label for="new-pin">New PIN</label>
+                    <input type="password" id="new-pin" placeholder="Enter new PIN">
+                </div>
+                <div class="input-group">
+                    <label for="confirm-new-pin">Confirm New PIN</label>
+                    <input type="password" id="confirm-new-pin" placeholder="Confirm new PIN">
+                </div>
+                <button class="btn btn-success" id="confirm-pin-change">Change PIN</button>
+                <button class="btn" id="back-from-pin-change">Cancel</button>
+            </div>
+            
+            <!-- Exit Screen -->
+            <div id="exit-screen" class="screen-content">
+                <div class="message">Thank You for Banking With Us</div>
+                <div class="transaction-info">Please take your card</div>
+                <button class="btn btn-primary" id="restart-atm">Start Over</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
